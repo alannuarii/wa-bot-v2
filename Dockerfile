@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json .
 
 # Install dependensi yang diperlukan untuk puppeteer
-RUN sudo apt update && apt install -y \
+RUN apt update && apt install -y \
     gconf-service \
     libgbm-dev \
     libasound2 \
