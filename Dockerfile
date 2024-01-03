@@ -5,10 +5,10 @@ FROM node:14
 WORKDIR /app
 
 # Salin package.json dan package-lock.json ke dalam container
-COPY package*.json ./
+COPY package*.json .
 
 # Install dependensi yang diperlukan untuk puppeteer
-RUN apt-get update && apt-get install -y \
+RUN sudo apt update && apt install -y \
     gconf-service \
     libgbm-dev \
     libasound2 \
@@ -47,12 +47,7 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     lsb-release \
     xdg-utils \
-    wget \
-    && apt-get clean
-
-# Set --no-sandbox flag in puppeteer launch command
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium
+    wget
 
 # Install dependensi proyek
 RUN npm install

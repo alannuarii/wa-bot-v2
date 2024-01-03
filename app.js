@@ -1,10 +1,8 @@
 const qrcode = require('qrcode-terminal');
-const fs = require("fs")
-const { Client, LegacySessionAuth, LocalAuth, MessageMedia } = require('whatsapp-web.js');
+const { Client } = require('whatsapp-web.js');
 const client = new Client({
     puppeteer: {
         args: ['--no-sandbox'],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     }
 });
 
