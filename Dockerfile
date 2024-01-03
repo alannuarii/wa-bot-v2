@@ -52,7 +52,7 @@ RUN apt-get update && apt-get install -y \
 
 # Set --no-sandbox flag in puppeteer launch command
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium-browser
+ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium
 
 # Install dependensi proyek
 RUN npm install

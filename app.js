@@ -2,10 +2,11 @@ const qrcode = require('qrcode-terminal');
 const fs = require("fs")
 const { Client, LegacySessionAuth, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const client = new Client({
-    authStrategy: new LocalAuth({
-        clientId: "client-one" //Un identificador(Sugiero que no lo modifiques)
-    })
-})
+    puppeteer: {
+        args: ['--no-sandbox'],
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+    }
+});
 
 // Save session values to the file upon successful auth
 client.on('authenticated', (session) => {
